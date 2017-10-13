@@ -5,8 +5,8 @@ class DBAdapter():
     def __init__(self):
         self.connection = psycopg2.connect(
             database='news',
-            user='student',
-            password='student',
+            user='boris',
+            password='boris',
         )
         self.cursor = self.connection.cursor()
 
