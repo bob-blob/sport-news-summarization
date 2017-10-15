@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block content %}
+<style type="text/css">
+.graphcontainer{
+    display: flex;
+}
+.flex-item{
+    flex-grow: 1;
+}
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    width: 80%;
+    margin-left: 10%;
+}
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+.response {
+    padding: 2px 16px;
+}
+</style>
+
+<h1>Football news</h1>
+
+{% for r in responses %}
+	<div class="card">
+		<div class="response">
+		  <h4> Summary {{r.number}} </h4>
+		  <p> {{ r.content }} </p>
+		  <p><b>Links:</b></p>
+		  <ul>{% for link in r.links %}<li>{{ link }}</li> {% endfor %} </ul>
+		</div>
+	</div>
+{% endfor %}
+
+{% endblock %}
