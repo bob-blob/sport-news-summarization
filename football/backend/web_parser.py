@@ -7,7 +7,8 @@ user_id = 12345
 goal_com_url = 'http://www.goal.com/en/news/'
 results = []
 
-def parse_GoalCom():
+
+def parse_goal_com():
     global results
 
     for i in range(1, 250):
@@ -26,11 +27,6 @@ def parse_GoalCom():
                 'link': news_link,
             })
         print('Processed %d page' % i)
-    # for item in results:
-    #     print("Title: %s, Link: %s\n" % (item['title'], item['link']))
-
-    # with open('test.html', 'w') as output_file:
-    #     output_file.write(r.text)
 
 
 def parse_news():
