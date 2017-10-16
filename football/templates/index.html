@@ -24,13 +24,17 @@
 
 <h1>Football news</h1>
 
-{% for r in responses %}
+{% for s in summaries %}
 	<div class="card">
 		<div class="response">
-		  <h4> Summary {{r.number}} </h4>
-		  <p> {{ r.content }} </p>
+		  <h4> Summary {{s.id}} </h4>
+		  <p> {{ s.summary1[0] }} </p>
 		  <p><b>Links:</b></p>
-		  <ul>{% for link in r.links %}<li>{{ link }}</li> {% endfor %} </ul>
+		  <ul>
+        {% for link in r.links %}
+        <li>{{ s.summary[0] }}</li>
+        {% endfor %}
+      </ul>
 		</div>
 	</div>
 {% endfor %}

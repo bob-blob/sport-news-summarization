@@ -48,5 +48,11 @@ class DBAdapter():
             summary = self.cursor.fetchone()
         return summary
 
+    def get_all_summary(self):
+        with self.connection:
+            self.cursor.execute('SELECT * FROM summaries')
+            summary = self.cursor.fetchall()
+        return summary
+
     def close(self):
         self.connection.close()
